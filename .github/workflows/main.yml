@@ -25,4 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          projectBaseDir: src/
+          projectBaseDir:
+            description: Set the sonar.projectBaseDir analysis property
+            required: false
+            default: .
