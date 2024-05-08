@@ -1,1 +1,17 @@
+name: "sonar SCAN"
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: sonarcloud scan
+        uses: sonarsource/sonarcloud-github-action@master
+
+        env:
+          SONAR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
